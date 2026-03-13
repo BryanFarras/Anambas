@@ -1,14 +1,31 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxoqkjf0awfn6"]
+[gd_scene load_steps=18 format=3 uid="uid://be3j7lfnl6rpm"]
 
-[ext_resource type="Script" uid="uid://di07qg8h2lk1u" path="res://scripts/interaction/sign.gd" id="1_8yyji"]
-[ext_resource type="Texture2D" uid="uid://bepgd8knm6luc" path="res://assets/placeholder/sign.png" id="2_s0ifd"]
-[ext_resource type="PackedScene" uid="uid://4rqdup3rhsqo" path="res://scenes/interaction/interactable.tscn" id="3_qkam6"]
-[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_qkam6"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_pnnkw"]
-[ext_resource type="Texture2D" uid="uid://due0mid78qc2s" path="res://assets/placeholder/sign_prompt.png" id="6_s0ifd"]
+[ext_resource type="Script" uid="uid://dxka5o8i5shwx" path="res://scripts/event/event_interactable.gd" id="1_0kjsw"]
+[ext_resource type="Script" uid="uid://i6aqbfqieekr" path="res://scripts/event/event_command.gd" id="2_dr0o5"]
+[ext_resource type="Texture2D" uid="uid://bepgd8knm6luc" path="res://assets/placeholder/sign.png" id="2_pwbew"]
+[ext_resource type="Script" uid="uid://u6q6s2hv3fr5" path="res://scripts/event/fade_command.gd" id="3_6oy23"]
+[ext_resource type="PackedScene" uid="uid://4rqdup3rhsqo" path="res://scenes/interaction/interactable.tscn" id="3_181ql"]
+[ext_resource type="Script" uid="uid://db067uqto5eoy" path="res://scripts/event/wait_command.gd" id="4_j2r8q"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_jadlf"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_2kd7j"]
+[ext_resource type="Texture2D" uid="uid://due0mid78qc2s" path="res://assets/placeholder/sign_prompt.png" id="6_atdix"]
+
+[sub_resource type="Resource" id="Resource_mtneb"]
+script = ExtResource("3_6oy23")
+metadata/_custom_type_script = "uid://u6q6s2hv3fr5"
+
+[sub_resource type="Resource" id="Resource_ou86n"]
+script = ExtResource("4_j2r8q")
+wait_time = 5.0
+metadata/_custom_type_script = "uid://db067uqto5eoy"
+
+[sub_resource type="Resource" id="Resource_fs164"]
+script = ExtResource("3_6oy23")
+fade_type = 0
+metadata/_custom_type_script = "uid://u6q6s2hv3fr5"
 
 [sub_resource type="Resource" id="Resource_4irdt"]
-script = ExtResource("5_pnnkw")
+script = ExtResource("5_2kd7j")
 duration = 0.6
 transition = 8
 ease = 1
@@ -67,18 +84,20 @@ _data = {
 }
 
 [node name="Sign" type="Node2D"]
-script = ExtResource("1_8yyji")
+script = ExtResource("1_0kjsw")
+entity_name = "EventSign"
+event_sequence = Array[ExtResource("2_dr0o5")]([SubResource("Resource_mtneb"), SubResource("Resource_ou86n"), SubResource("Resource_fs164")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_s0ifd")
+texture = ExtResource("2_pwbew")
 
-[node name="Interactable" parent="." instance=ExtResource("3_qkam6")]
+[node name="Interactable" parent="." instance=ExtResource("3_181ql")]
 unique_name_in_owner = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -52)
-script = ExtResource("4_qkam6")
+script = ExtResource("4_jadlf")
 zoom = Vector2(4, 4)
 tween_resource = SubResource("Resource_4irdt")
 draw_limits = true
@@ -113,7 +132,7 @@ offset_right = 241.0
 offset_bottom = 177.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_s0ifd")
+texture = ExtResource("6_atdix")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="SignUI/CanvasGroup/Panel/TextureRect"]
 unique_name_in_owner = true
