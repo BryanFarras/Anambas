@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://tqpaxdeygs6"]
+
+[ext_resource type="Shader" uid="uid://bmkg44if2ay2a" path="res://shaders/PerlinNoise.gdshader" id="1_gdbjj"]
+
+[resource]
+shader = ExtResource("1_gdbjj")
+shader_parameter/scroll_speed = Vector2(0.02, 0.01)
+shader_parameter/noise_scale = 1.0
+shader_parameter/light_color = Color(1.2, 1.2, 1.25, 1)
+shader_parameter/dark_color = Color(0.7, 0.75, 0.8, 1)
+shader_parameter/light_color_2 = Color(1.25, 1.1, 1.1, 1)
+shader_parameter/dark_color_2 = Color(0.6, 0.65, 0.75, 1)
+shader_parameter/alternate_speed = 1.0
+shader_parameter/effect_intensity = 1.0
