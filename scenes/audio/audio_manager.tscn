@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvh5s6pgekfoq"]
+
+[ext_resource type="Script" uid="uid://bgp6ihig7f5cn" path="res://scripts/audio/audio_manager.gd" id="1_cfl81"]
+[ext_resource type="Script" uid="uid://hduwjcrkeky7" path="res://scripts/audio/sfx_character.gd" id="2_85pnb"]
+[ext_resource type="Script" uid="uid://c7rxll6vk8h2f" path="res://scripts/audio/sfx_environtment.gd" id="3_wp3eh"]
+[ext_resource type="Script" uid="uid://bh1ajjbc4ura0" path="res://scripts/audio/sfx_ambience.gd" id="4_c3tep"]
+[ext_resource type="Script" uid="uid://yeupqexnns00" path="res://scripts/audio/music.gd" id="5_xe7xr"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_cfl81")
+
+[node name="SFX_Character" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_85pnb")
+
+[node name="SFX_Environtment" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_wp3eh")
+
+[node name="SFX_Ambience" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_c3tep")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_xe7xr")
+music_clips = Array[AudioStream]([null, null, null])
