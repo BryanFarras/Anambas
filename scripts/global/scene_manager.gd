@@ -42,6 +42,11 @@ func go_to_door(scene_key: String, door_id: String) -> void:
 	# call_deferred wajib: dipanggil dari physics callback
 	call_deferred("_transition_to_scene", scene_key)
 
+## Memainkan animasi fade dan mengembalikan sinyal untuk di-await oleh EventManager
+func play_fade_animation(anim_name: String) -> Signal:
+	animation_player.play(anim_name)
+	return animation_player.animation_finished
+
 # -----------------------------------------------
 # Transition
 # -----------------------------------------------
