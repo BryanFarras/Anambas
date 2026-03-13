@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://be3j7lfnl6rpm"]
+[gd_scene load_steps=20 format=3 uid="uid://be3j7lfnl6rpm"]
 
 [ext_resource type="Script" uid="uid://dxka5o8i5shwx" path="res://scripts/event/event_interactable.gd" id="1_0kjsw"]
 [ext_resource type="Script" uid="uid://i6aqbfqieekr" path="res://scripts/event/event_command.gd" id="2_dr0o5"]
@@ -8,21 +8,23 @@
 [ext_resource type="Script" uid="uid://db067uqto5eoy" path="res://scripts/event/wait_command.gd" id="4_j2r8q"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_jadlf"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_2kd7j"]
+[ext_resource type="Script" uid="uid://b65no85hqh53y" path="res://scripts/event/eval_command.gd" id="5_dr0o5"]
 [ext_resource type="Texture2D" uid="uid://due0mid78qc2s" path="res://assets/placeholder/sign_prompt.png" id="6_atdix"]
 
-[sub_resource type="Resource" id="Resource_mtneb"]
+[sub_resource type="Resource" id="Resource_0kjsw"]
 script = ExtResource("3_6oy23")
-metadata/_custom_type_script = "uid://u6q6s2hv3fr5"
 
-[sub_resource type="Resource" id="Resource_ou86n"]
+[sub_resource type="Resource" id="Resource_dr0o5"]
 script = ExtResource("4_j2r8q")
 wait_time = 5.0
-metadata/_custom_type_script = "uid://db067uqto5eoy"
 
-[sub_resource type="Resource" id="Resource_fs164"]
+[sub_resource type="Resource" id="Resource_6oy23"]
 script = ExtResource("3_6oy23")
 fade_type = 0
-metadata/_custom_type_script = "uid://u6q6s2hv3fr5"
+
+[sub_resource type="Resource" id="Resource_x53aw"]
+script = ExtResource("5_dr0o5")
+expression_text = "print(\"Hello World!\")"
 
 [sub_resource type="Resource" id="Resource_4irdt"]
 script = ExtResource("5_2kd7j")
@@ -86,7 +88,7 @@ _data = {
 [node name="Sign" type="Node2D"]
 script = ExtResource("1_0kjsw")
 entity_name = "EventSign"
-event_sequence = Array[ExtResource("2_dr0o5")]([SubResource("Resource_mtneb"), SubResource("Resource_ou86n"), SubResource("Resource_fs164")])
+event_sequence = Array[ExtResource("2_dr0o5")]([SubResource("Resource_0kjsw"), SubResource("Resource_dr0o5"), SubResource("Resource_6oy23"), SubResource("Resource_x53aw")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_pwbew")

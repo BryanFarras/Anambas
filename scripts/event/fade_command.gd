@@ -11,3 +11,6 @@ func execute() -> Signal:
 		return SceneManager.play_fade_animation("fade_in")
 	else:
 		return SceneManager.play_fade_animation("fade_out")
+
+func _to_string() -> String:
+	return "Fade In" if fade_type == FadeType.FADE_IN else "Fade Out"
