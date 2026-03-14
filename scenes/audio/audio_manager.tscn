@@ -12,6 +12,7 @@ script = ExtResource("1_cfl81")
 [node name="SFX_Character" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_85pnb")
+footstep_interval = 0.249
 
 [node name="SFX_Environtment" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
