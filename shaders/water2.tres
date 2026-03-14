@@ -3,8 +3,9 @@
 [ext_resource type="Shader" uid="uid://bjxxu3gumlpya" path="res://shaders/waterEffect.gdshader" id="1_23c3a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_g6cb4"]
-noise_type = 4
-frequency = 0.0803
+noise_type = 2
+seed = 3
+frequency = 0.2535
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eslbs"]
 noise = SubResource("FastNoiseLite_g6cb4")
@@ -12,7 +13,7 @@ seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b8qka"]
 seed = -480
-frequency = 0.0679
+frequency = 0.1508
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ypcob"]
 noise = SubResource("FastNoiseLite_b8qka")
@@ -24,10 +25,10 @@ shader_parameter/noise1 = SubResource("NoiseTexture2D_eslbs")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_ypcob")
 shader_parameter/scroll1 = Vector2(0.02, 0.05)
 shader_parameter/scroll2 = Vector2(-0.02, 0.05)
-shader_parameter/tone_color = Color(1, 1, 1, 1)
+shader_parameter/tone_color = Color(0.64705884, 1, 1, 1)
 shader_parameter/top_color = Color(1, 1, 1, 1)
-shader_parameter/distortion_strengh = 0.02300004859249993
-shader_parameter/blur_amount = 1.794000085215
-shader_parameter/light_start = 0.246000011685
-shader_parameter/light_end = 0.8150000387125
-shader_parameter/surface_distortion_mult = 3.618000124355
+shader_parameter/distortion_strengh = 0.09200005186999993
+shader_parameter/blur_amount = 0.0
+shader_parameter/light_start = 0.49600002356
+shader_parameter/light_end = 0.522000024795
+shader_parameter/surface_distortion_mult = 4.92800018658

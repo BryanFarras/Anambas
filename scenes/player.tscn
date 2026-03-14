@@ -280,6 +280,7 @@ draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="InventoryUI" parent="." instance=ExtResource("7_fjrip")]
+visible = false
 
 [node name="InventoryPCam" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
