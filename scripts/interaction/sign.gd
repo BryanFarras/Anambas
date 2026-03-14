@@ -65,7 +65,8 @@ func _on_interact() -> void:
 func _open() -> void:
 	# Aktifkan PCam sign → Phantom Camera otomatis tween ke sana
 	pcam.set_priority(pcam_active_priority)
-
+	print("Anda dapat papan yang disentuh")
+	Inventory.add_item(load("res://assets/items/papan_disentuh.tres"))
 	animation_player.play("show")
 
 func _close() -> void:

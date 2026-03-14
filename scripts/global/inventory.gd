@@ -40,6 +40,12 @@ func remove_at(slot_index: int) -> void:
 	slots[slot_index] = null
 	changed.emit()
 
+func erase(item_name:String) -> void:
+	for i in slots.size():
+		if slots[i] != null and slots[i].id == item_name:
+			remove_at(i)
+			break
+
 ## Cek apakah inventory punya item dengan id tertentu.
 func has_item(id: String) -> bool:
 	return slots.any(func(s): return s != null and s.id == id)
